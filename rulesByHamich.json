@@ -247,13 +247,14 @@ rules:
   # --- ГОЛОСОВОЙ ЧАТ VALORANT (VIVOX) -> DIRECT ---
   - IP-CIDR,162.248.88.0/22,DIRECT,no-resolve
   - IP-CIDR,162.254.192.0/21,DIRECT,no-resolve
-  - DOMAIN-KEYWORD,vivox,DIRECT
-  - DOMAIN-SUFFIX,vivox.com,DIRECT
-  - DOMAIN-SUFFIX,live.vivox.com,DIRECT
+  - DOMAIN-KEYWORD,vivox,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,vivox.com,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,live.vivox.com,DIRECT,no-resolve
 
+  #Gemini work
+  - DOMAIN-SUFFIX,google.com,🤖 AI
 
   # --- ОСТАЛЬНЫЕ ИГРЫ И ПРАВИЛА ---
-  - PROCESS-NAME,ZenlessZoneZero.exe,🌍 VPN
   - PROCESS-NAME,PathOfExileSteam.exe,🌍 VPN
   - OR,((DOMAIN,ipwhois.app),(DOMAIN,ipwho.is),(DOMAIN,api.ip.sb),(DOMAIN,ipapi.co),(DOMAIN,ipinfo.io),(DOMAIN,ip-api.com),(DOMAIN,cloudflare-dns.com)),🌍 VPN
   - RULE-SET,oisd_big,REJECT
