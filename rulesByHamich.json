@@ -101,6 +101,14 @@ proxy-groups:
       - 🌍 VPN
       # LEAVE THIS LINE!
     include-all: true
+  - name: 🎮 Games From Process
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+    type: select
+    proxies:
+      - DIRECT
+      - 🌍 VPN
+      # LEAVE THIS LINE!
+    include-all: true
   - name: ⚡️ Fastest
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
     type: url-test
@@ -251,11 +259,19 @@ rules:
   - DOMAIN-SUFFIX,vivox.com,DIRECT,no-resolve
   - DOMAIN-SUFFIX,live.vivox.com,DIRECT,no-resolve
 
-  #Gemini work
+  # Gemini work
   - DOMAIN-SUFFIX,google.com,🤖 AI
 
-  # --- ОСТАЛЬНЫЕ ИГРЫ И ПРАВИЛА ---
-  - PROCESS-NAME,PathOfExileSteam.exe,🌍 VPN
+  # --- СЕРВИСНЫЕ ПРОЦЕССЫ ---
+  - PROCESS-NAME,AnyDesk.exe,🌍 VPN
+  - PROCESS-NAME,Spotify.exe,🌍 VPN
+
+  # --- ИГРЫ ПО ПРОЦЕССАМ ---
+  - PROCESS-NAME,PathOfExileSteam.exe,🎮 Games From Process
+  # Сюда можно дописывать другие процессы игр:
+  # - PROCESS-NAME,ZenlessZoneZero.exe,🎮 Games From Process
+
+  # --- ОСТАЛЬНЫЕ ПРАВИЛА ---
   - OR,((DOMAIN,ipwhois.app),(DOMAIN,ipwho.is),(DOMAIN,api.ip.sb),(DOMAIN,ipapi.co),(DOMAIN,ipinfo.io),(DOMAIN,ip-api.com),(DOMAIN,cloudflare-dns.com)),🌍 VPN
   - RULE-SET,oisd_big,REJECT
   - OR,((RULE-SET,telegram-ips),(RULE-SET,telegram-domains)),➤ Telegram
