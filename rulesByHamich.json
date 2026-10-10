@@ -261,6 +261,7 @@ rules:
 
   # Gemini work
   - DOMAIN-SUFFIX,google.com,🤖 AI
+  - DOMAIN-SUFFIX,googleusercontent.com,🤖 AI
 
   # --- СЕРВИСНЫЕ ПРОЦЕССЫ ---
   - PROCESS-NAME,AnyDesk.exe,🌍 VPN
